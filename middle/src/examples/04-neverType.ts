@@ -24,4 +24,4 @@ console.log(example([1,1,1,1]));
 console.log(example(12121212));
 console.log(example('hola despues del fail'));
 
-//ayuda a detectar errores de ciclos infinitos
+//ayuda a detectar errores de ciclos infinitoscd ..
