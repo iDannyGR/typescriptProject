@@ -1,7 +1,7 @@
 import {faker} from '@faker-js/faker';
 
 import { Product } from "./product.model";
-import { CreateProductDto, UpdateProductDto } from "./product.dto";
+import { CreateProductDto, UpdateProductDto, FindProductDto } from "./product.dto";
 
 const products : Product[] = [];
 
@@ -29,7 +29,7 @@ const deleteProduct = (id:string|number) => {
     });
 };
 
-const updateProduct = ((id:string|number, changes:UpdateProductDto):Product => {
+const updateProduct = ((id:Product['id'], changes:UpdateProductDto):Product => {
     const index = products.findIndex(item => item.id === id);
     const prevData = products[index];
     products[index]={
@@ -39,9 +39,18 @@ const updateProduct = ((id:string|number, changes:UpdateProductDto):Product => {
     return products[index];
 });
 
-const getProduct = ((id:string|number, changes:Product) => {
+const findProduct = (dto:FindProductDto):Product[] => {
+    //code filter
+    // dto.color='blue';
+    // dto.tags?.pop();
+    return products;
+};
 
-});
+
+export  { addProduct, products ,updateProduct, findProduct};
 
 
-export  { addProduct, products ,updateProduct};
+//el tipado por indice se realiza como la linea 32 de tipo
+// Product['id'], de esta manera se obtiene el tipado colocado de la interfaz al elemento
+
+//ReadOnlyArray evita el mutado del array, por ejemplo cuando se hace push se modica
