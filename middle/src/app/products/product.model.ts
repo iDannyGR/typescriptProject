@@ -16,4 +16,6 @@ interface Product extends BaseModel {
   tags: string[];
 }
 
+
+
 export {Sizes, Product}
