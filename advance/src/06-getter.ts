@@ -29,8 +29,9 @@ export class MyDate {
   }
 
   const myDate = new MyDate(2022);
-  myDate.day
-  myDate.isLeapYear
-  const myDate2 = new MyDate(2022,3);
-  const myDate3= new MyDate();
-  console.log(myDate.printFormat(), myDate2.printFormat(), myDate3.printFormat())
+
+  const myDate2 = new MyDate(2000,3,7);
+console.log('2000',  myDate2.isLeapYear);
+console.log('2022',  myDate.isLeapYear);
+
+//todos los get retornan un valor
