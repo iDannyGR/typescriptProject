@@ -13,12 +13,15 @@ const api = axios.create({
     })
     return promise;
   }
-function getProducts(){
-  const promise = await api.get('/products')
+async function getProducts(){
+  const promise = await api.get('/products');
+  return promise.data;
 }
 
   console.log('------'.repeat(10));
   const rta = await  delay(500);
   console.log(rta);
+  const products = await getProducts()
+  console.log(products)
 
 })()
