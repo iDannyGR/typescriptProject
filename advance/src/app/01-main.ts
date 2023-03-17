@@ -9,10 +9,12 @@ const api = axios.create({
 
 (async()=>{
 async function getProducts(): Promise<Product[]> {
-  const { data } = await api.get<Product[]>('/products');
+  // const rta = await api.get<Product[]>('/products');
+  const { data } = await api.get<Product[]>('/products')
+  // const data = rta.data as Product[] para forzar tipado
   return data;
 }
-
+// se pueden realizar las consultas
   const products = await getProducts()
   console.log(products.map(item => item.title))
 
